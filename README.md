@@ -9,8 +9,8 @@ El programa consiste en una simulación de tres portafolios, con sus respectivas
 Los portafolios son:
 
 - Portfolio A: 20% META, 20% AAPL, 20% GOOGL, 20% MSFT, 20% NVDA, con un valor de 1000 USD
-- Portfolio B: 10% META, 30% AAPL, 30% GOOGL, 10% MSFT, 10% AMZN, 10% NVDA, con un valor de 1000 USD
-- Portfolio C: 10% META, 30% AAPL, 30% GOOGL, 10% MSFT, 10% AMZN, 10% NVDA, con un valor de 2000 USD
+- Portfolio B: 30% AAPL, 30% GOOGL, 10% MSFT, 10% AMZN, 10% NVDA, 10% KO, con un valor de 10000 USD
+- Portfolio C: 30% AAPL, 30% GOOGL, 10% MSFT, 10% AMZN, 10% NVDA, 10% KO, con un valor de 20000 USD
 
 El programa creará un archivo que contiene todas las acciones que se deben tomar para mantener los portafolios balanceados.
 

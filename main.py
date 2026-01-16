@@ -139,7 +139,7 @@ if __name__ == "__main__":
 
     portfolio_b = Portfolio(
         "Portfolio B",
-        total_value=1000,
+        total_value=10000,
         allocated_stocks={
             "AAPL": 0.3,
             "GOOGL": 0.3,
@@ -152,7 +152,7 @@ if __name__ == "__main__":
 
     portfolio_c = Portfolio(
         "Portfolio C",
-        total_value=2000,
+        total_value=20000,
         allocated_stocks={
             "AAPL": 0.3,
             "GOOGL": 0.3,
