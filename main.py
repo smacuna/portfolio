@@ -35,15 +35,15 @@ class PortfolioStock:
 
 class Portfolio:
     def __init__(
-        self, name: str, max_value: float, allocated_stocks: dict[str, float]
+        self, name: str, total_value: float, allocated_stocks: dict[str, float]
     ) -> None:
         self.name = name
-        self.max_value = max_value
+        self.total_value = total_value
         self.stocks: dict[str, PortfolioStock] = dict()
         self.allocated_stocks: dict[str, float] = allocated_stocks
 
     @property
-    def total_value(self, date: str) -> float:
+    def current_value(self, date: str) -> float:
         """
         Returns the total value of the portfolio on the given date.
         """
@@ -58,7 +58,6 @@ class Portfolio:
         """
         Rebalances the portfolio to the allocated stocks.
         """
-        print(f"{self.name} | Date: {date}")
 
         # Calcular el valor total objetivo de cada stock
         target_stock_values: dict[str, float] = dict()
@@ -68,7 +67,7 @@ class Portfolio:
             if stock is None:
                 self.stocks[symbol] = PortfolioStock(Stock(symbol), 0)
 
-            target_stock_values[symbol] = percentage * self.max_value
+            target_stock_values[symbol] = percentage * self.total_value
 
         # Comprar o vender stocks para alcanzar el valor objetivo
         for symbol, stock in self.stocks.items():
@@ -97,8 +96,6 @@ class Portfolio:
 
         self.stocks[stock_symbol].quantity += quantity
 
-        print(f"Buy {quantity} of {stock_symbol}")
-
         with open("results/results.csv", "a") as f:
             f.write(f"{self.name},{date},Buy,{stock_symbol},{quantity}\n")
 
@@ -117,8 +114,6 @@ class Portfolio:
 
         self.stocks[stock_symbol].quantity -= quantity
 
-        print(f"Sell {quantity} of {stock_symbol}")
-
         with open("results/results.csv", "a") as f:
             f.write(f"{self.name},{date},Sell,{stock_symbol},{quantity}\n")
 
@@ -132,7 +127,7 @@ if __name__ == "__main__":
 
     portfolio_a = Portfolio(
         "Portfolio A",
-        max_value=1000,
+        total_value=1000,
         allocated_stocks={
             "META": 0.2,
             "AAPL": 0.2,
@@ -144,27 +139,27 @@ if __name__ == "__main__":
 
     portfolio_b = Portfolio(
         "Portfolio B",
-        max_value=1000,
+        total_value=1000,
         allocated_stocks={
-            "META": 0.1,
             "AAPL": 0.3,
             "GOOGL": 0.3,
             "MSFT": 0.1,
             "AMZN": 0.1,
             "NVDA": 0.1,
+            "KO": 0.1,
         },
     )
 
     portfolio_c = Portfolio(
         "Portfolio C",
-        max_value=2000,
+        total_value=2000,
         allocated_stocks={
-            "META": 0.1,
             "AAPL": 0.3,
             "GOOGL": 0.3,
             "MSFT": 0.1,
             "AMZN": 0.1,
             "NVDA": 0.1,
+            "KO": 0.1,
         },
     )
 

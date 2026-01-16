@@ -4,7 +4,7 @@ Este proyecto permite mantener portafolios de acciones balanceados en base a sus
 
 ## Descripción
 
-El programa consiste en una simulación de tres portafolios, con sus respectivas distribuciones de porcentajes. Se parte desde el 15 de diciembre de 2025 y se simula hasta el 15 de enero de 2026.
+El programa consiste en una simulación de tres portafolios, con sus respectivas distribuciones de porcentajes. Se parte desde el 15 de junio de 2025 y se simula hasta el 15 de enero de 2026. Se rebalancea el portafolio cada semana.
 
 Los portafolios son:
 
@@ -46,7 +46,6 @@ Donde:
 - `Action`: `Buy` si se debe comprar acciones o `Sell` si se debe vender acciones
 - `Stock`: Símbolo de la acción
 - `Quantity`: Cantidad de acciones a comprar o vender
-
 
 
 ## Comentarios adicionales
